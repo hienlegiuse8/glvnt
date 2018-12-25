@@ -17,7 +17,7 @@ namespace glvnt.Controller
             string lopid = _lopid.Substring(1);
 
             MySqlConnection cnn;
-            string connectionString = Utils.CONNSTRING;
+            string connectionString = CONNSTRING.connstring;
             cnn = new MySqlConnection(connectionString);
 
             cnn.Open();

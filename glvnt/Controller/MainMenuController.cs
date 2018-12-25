@@ -22,7 +22,7 @@ namespace glvnt.Controller
         {
             MySqlConnection cnn;
             //string connetionString = ConfigurationManager.ConnectionStrings["tnntsiteground"].ConnectionString;
-            string connectionString = Utils.CONNSTRING;
+            string connectionString = CONNSTRING.connstring;
             cnn = new MySqlConnection(connectionString);
 
             cnn.Open();

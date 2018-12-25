@@ -22,41 +22,10 @@
         </DataGrid>
         <StackPanel Grid.Row="0" Grid.Column="1" >
             <StackPanel Orientation="Horizontal">
-                <Label x:Name="lbl_ktmieng" Content="Kiem Tra Mieng:" VerticalAlignment="Top" MinWidth="60"/>
+                <Label x:Name="lbl_ktmieng" Content="Kiem Tra Mieng:"/>
                 <TextBox x:Name="txt_ktmieng" Width="60"></TextBox>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label x:Name="lbl_ktmieng" Content="Kiem Tra Mieng:" VerticalAlignment="Top" MinWidth="60"/>
-                <TextBox x:Name="txt_ktmieng" Width="60"></TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label x:Name="lbl_ktmieng" Content="Kiem Tra Mieng:" VerticalAlignment="Top" MinWidth="60"/>
-                <TextBox x:Name="txt_ktmieng" Width="60"></TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label x:Name="lbl_ktmieng" Content="Kiem Tra Mieng:" VerticalAlignment="Top" MinWidth="60"/>
-                <TextBox x:Name="txt_ktmieng" Width="60"></TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label x:Name="lbl_ktmieng" Content="Kiem Tra Mieng:" VerticalAlignment="Top" MinWidth="60"/>
-                <TextBox x:Name="txt_ktmieng" Width="60"></TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label x:Name="lbl_ktmieng" Content="Kiem Tra Mieng:" VerticalAlignment="Top" MinWidth="60"/>
-                <TextBox x:Name="txt_ktmieng" Width="60"></TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label x:Name="lbl_ktmieng" Content="Kiem Tra Mieng:" VerticalAlignment="Top" MinWidth="60"/>
-                <TextBox x:Name="txt_ktmieng" Width="60"></TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label x:Name="lbl_ktmieng" Content="Kiem Tra Mieng:" VerticalAlignment="Top" MinWidth="60"/>
-                <TextBox x:Name="txt_ktmieng" Width="60"></TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label x:Name="lbl_ktmieng" Content="Kiem Tra Mieng:" VerticalAlignment="Top" MinWidth="60"/>
-                <TextBox x:Name="txt_ktmieng" Width="60"></TextBox>
-            </StackPanel>
+            
             
         </StackPanel>
     </Grid>
