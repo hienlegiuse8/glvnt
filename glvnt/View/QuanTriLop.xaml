@@ -6,25 +6,87 @@
         xmlns:local="clr-namespace:glvnt.View"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
-        Title="QuanTriLop" Height="480" Width="800">
+        Title="QuanTriLop" Height="600" Width="800">
     <Grid x:Name="QuanTriLopGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="8*"/>
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <DataGrid Grid.Row="0" Grid.Column="0" x:Name="QuanLyLopDataGrid" Margin="10" ItemsSource="{Binding}" AutoGenerateColumns="True" 
                     ScrollViewer.CanContentScroll="False" 
                     ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                          ColumnWidth="Auto">
+                          ColumnWidth="Auto" SelectionChanged="danhsach_selectChanged">
         </DataGrid>
         <StackPanel Grid.Row="0" Grid.Column="1" >
-            <StackPanel Orientation="Horizontal">
-                <Label x:Name="lbl_ktmieng" Content="Kiem Tra Mieng:"/>
-                <TextBox x:Name="txt_ktmieng" Width="60"></TextBox>
-            </StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" x:Name="lbl_hocky" Content="Học Kỳ:" Margin="0,20,0,0"/>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txt_hocky" Margin="0,20,10,0" IsReadOnly="True"/>
+                <Label Grid.Row="1" Grid.Column="0" x:Name="lbl_ktmieng" Content="Kiểm Tra Miệng:"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txt_ktmieng" Margin="0,0,10,0"/>
+                <Label Grid.Row="2" Grid.Column="0" x:Name="lbl_kt15phut" Content="Kiểm Tra 15 phút:"/>
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txt_kt15phut" Margin="0,0,10,0"/>
+                <Label Grid.Row="3" Grid.Column="0" x:Name="lbl_kt1tiet" Content="Kiểm Tra 1 tiết:"/>
+                <TextBox Grid.Row="3" Grid.Column="1" x:Name="txt_kt1tiet" Margin="0,0,10,0"/>
+                <Label Grid.Row="4" Grid.Column="0" x:Name="lbl_kthocky" Content="Kiểm Tra Học Kỳ:"/>
+                <TextBox Grid.Row="4" Grid.Column="1" x:Name="txt_kthocky" Margin="0,0,10,0"/>
+                <Label Grid.Row="5" Grid.Column="0" x:Name="lbl_vang" Content="Vắng:"/>
+                <TextBox Grid.Row="5" Grid.Column="1" x:Name="txt_vang" Margin="0,0,10,0"/>
+                <Label Grid.Row="6" Grid.Column="0" x:Name="lbl_tre" Content="Trễ:"/>
+                <TextBox Grid.Row="6" Grid.Column="1" x:Name="txt_tre" Margin="0,0,10,0"/>
+                <Label Grid.Row="7" Grid.Column="0" x:Name="lbl_comat" Content="Có Mặt:"/>
+                <TextBox Grid.Row="7" Grid.Column="1" x:Name="txt_comat" Margin="0,0,10,0"/>
+                <Label Grid.Row="8" Grid.Column="0" x:Name="lbl_hocluc" Content="Học Lực:"/>
+                <TextBox Grid.Row="8" Grid.Column="1" x:Name="txt_hocluc" Margin="0,0,10,0"/>
+                <Label Grid.Row="9" Grid.Column="0" x:Name="lbl_chuyencan" Content="Chuyên Cần:"/>
+                <TextBox Grid.Row="9" Grid.Column="1" x:Name="txt_chuyencan" Margin="0,0,10,0"/>
+                <Label Grid.Row="10" Grid.Column="0" x:Name="lbl_daoduc" Content="Đạo Đức:"/>
+                <TextBox Grid.Row="10" Grid.Column="1" x:Name="txt_daoduc" Margin="0,0,10,0"/>
+                <Label Grid.Row="11" Grid.Column="0" x:Name="lbl_xeploai" Content="Xếp Loại:"/>
+                <TextBox Grid.Row="11" Grid.Column="1" x:Name="txt_xeploai" Margin="0,0,10,0"/>
+                <Button Grid.Row="12" Grid.Column="0" x:Name="UpdateHocKy" Content="Update HK" Margin="5" MaxWidth="100" Click="UpdateHK" />
+
+                <Label Grid.Row="13" Grid.Column="0" x:Name="lbl_cnhocluc" Content="Học Lực:"/>
+                <TextBox Grid.Row="13" Grid.Column="1" x:Name="txt_cnhocluc" Margin="0,0,10,0"/>
+                <Label Grid.Row="14" Grid.Column="0" x:Name="lbl_cnchuyencan" Content="Chuyên Cần:"/>
+                <TextBox Grid.Row="14" Grid.Column="1" x:Name="txt_cnchuyencan" Margin="0,0,10,0"/>
+                <Label Grid.Row="15" Grid.Column="0" x:Name="lbl_cndaoduc" Content="Đạo Đức:"/>
+                <TextBox Grid.Row="15" Grid.Column="1" x:Name="txt_cndaoduc" Margin="0,0,10,0"/>
+                <Label Grid.Row="16" Grid.Column="0" x:Name="lbl_cnxeploai" Content="Xếp Loại:"/>
+                <TextBox Grid.Row="16" Grid.Column="1" x:Name="txt_cnxeploai" Margin="0,0,10,0"/>
+                <Button Grid.Row="17" Grid.Column="0" x:Name="UpdateCaNam" Content="Update Năm" Margin="5" MaxWidth="100"/>
+            </Grid>
+            
             
             
         </StackPanel>

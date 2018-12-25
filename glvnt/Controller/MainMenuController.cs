@@ -35,6 +35,7 @@ namespace glvnt.Controller
             //msda.Fill(ds);
             //return ds;
             msda.Fill(dt);
+            cnn.Close();
             return dt;            
         }
 

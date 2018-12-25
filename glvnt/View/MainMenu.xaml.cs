@@ -44,7 +44,7 @@ namespace glvnt.View
         private void convertCurrentMonthToHocKy()
         {
             int month = DateTime.Now.Month;
-            hocky1 = (9 <= month || month <= 12) ? false : true;
+            hocky1 = (9 <= month || month <= 12 || month <=1) ? true : false;
             HK1.IsChecked = hocky1;
             HK2.IsChecked = !hocky1;
         }

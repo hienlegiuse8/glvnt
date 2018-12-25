@@ -20,3 +20,4 @@ D:\Virtium\08_ITeam\10_Other\glvnt\glvnt\obj\Debug\View\LogIn.g.cs
 D:\Virtium\08_ITeam\10_Other\glvnt\glvnt\obj\Debug\View\QuanTriLop.g.cs
 D:\Virtium\08_ITeam\10_Other\glvnt\glvnt\obj\Debug\View\LogIn.baml
 D:\Virtium\08_ITeam\10_Other\glvnt\glvnt\obj\Debug\View\QuanTriLop.baml
+D:\Virtium\08_ITeam\10_Other\glvnt\glvnt\obj\Debug\glvnt.csprojResolveAssemblyReference.cache
