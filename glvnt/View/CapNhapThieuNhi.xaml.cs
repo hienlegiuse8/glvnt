@@ -47,6 +47,7 @@ namespace glvnt.View
                 txt_ten_thanh.Text = thieunhi.ten_thanh;
                 txt_ten.Text = thieunhi.ten;
                 txt_ho.Text = thieunhi.ho;
+                
                 date_ngay_sinh.SelectedDate = DateTime.Parse(thieunhi.ngay_sinh);
                 txt_cha.Text = thieunhi.cha;
                 txt_me.Text = thieunhi.me;
@@ -78,7 +79,9 @@ namespace glvnt.View
             thieunhi.ten_thanh = txt_ten_thanh.Text;
             thieunhi.ten = txt_ten.Text;
             thieunhi.ho = txt_ho.Text;
-            thieunhi.ngay_sinh = date_ngay_sinh.Text;
+            //thieunhi.ngay_sinh = date_ngay_sinh.Text;
+            DateTime ngaysinh = date_ngay_sinh.SelectedDate.Value.Date;
+            thieunhi.ngay_sinh = ngaysinh.Year.ToString()+ "/" + ngaysinh.Month.ToString() + "/" + ngaysinh.Day.ToString();
             thieunhi.cha = txt_cha.Text;
             thieunhi.me = txt_me.Text;
             thieunhi.dia_chi = txt_dia_chi.Text;

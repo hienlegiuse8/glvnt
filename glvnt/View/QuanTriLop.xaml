@@ -21,8 +21,8 @@
                           ColumnWidth="Auto" SelectionChanged="danhsach_selectChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding id_thieunhi}"/>
-                <DataGridTextColumn Header="Tên" Binding="{Binding ten}"/>
                 <DataGridTextColumn Header="Họ" Binding="{Binding ho}"/>
+                <DataGridTextColumn Header="Tên" Binding="{Binding ten}"/>
                 <DataGridTextColumn Header="Ngày Sinh" Binding="{Binding ngay_sinh}"/>
                 <DataGridTextColumn Header="Miệng" Binding="{Binding hkmieng}"/>
                 <DataGridTextColumn Header="15 Phút" Binding="{Binding hk15phut}"/>

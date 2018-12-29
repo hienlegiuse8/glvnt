@@ -28,7 +28,7 @@ namespace glvnt.Controller
                 string sql = "";
                 if (_hocky1)
                 {
-                    sql = "SELECT id_thieunhilopnamhoc, id_thieunhi, ten, ho, ngay_sinh, hkmieng, hk15phut," +
+                    sql = "SELECT id_thieunhilopnamhoc, id_thieunhi, ten, ho, DATE_FORMAT(ngay_sinh, \"%d/%m/%Y\") as ngay_sinh, hkmieng, hk15phut," +
                         " hk1tiet, hkhocky, hkvang, hktre, hkcomat," +
                         " hkhocluc, hkchuyencan, hkdaoduc, hkxeploai, hkthuhang," +
                         " hk1diemtb," +
@@ -40,7 +40,7 @@ namespace glvnt.Controller
                 }
                 else
                 {
-                    sql = "SELECT id_thieunhilopnamhoc, id_thieunhi, ten, ho, ngay_sinh, hkmieng, hk15phut," +
+                    sql = "SELECT id_thieunhilopnamhoc, id_thieunhi, ten, ho, DATE_FORMAT(ngay_sinh, \"%d/%m/%Y\") as ngay_sinh, hkmieng, hk15phut," +
                         " hk1tiet, hkhocky, hkvang, hktre, hkcomat, " +
                         " hkhocluc, hkchuyencan, hkdaoduc, hkxeploai, ' ' as hkthuhang," +
                         " hk1diemtb, hk2diemtb, cndiemtb," +

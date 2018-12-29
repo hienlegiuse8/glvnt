@@ -92,6 +92,19 @@ namespace glvnt.Model
             }
         }
 
+        public static string convertDDMMYYYYtoYYYYMD(string date)
+        {
+            string[] sub = date.Split('/');
+            if (sub.Length != 3)
+            {
+                return "";
+            }
+            else
+            {
+                return sub[2] + "/" + sub[1] + "/" + sub[0];
+            }
+        }
+
         public static List<HocLuc> getListHocLuc()
         {
             string connectionString = CONNSTRING.connstring;

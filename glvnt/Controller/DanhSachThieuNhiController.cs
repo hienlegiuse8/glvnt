@@ -21,7 +21,7 @@ namespace glvnt.Controller
             try
             {
                 cnn.Open();
-                string sql = "SELECT id_thieunhi, ten_thanh as 'Tên Thánh', ten as 'Tên', ho as 'Họ', ngay_sinh as 'Ngày Sinh'," +
+                string sql = "SELECT id_thieunhi, ten_thanh as 'Tên Thánh', ten as 'Tên', ho as 'Họ', DATE_FORMAT(ngay_sinh, \"%d/%m/%Y\") as 'Ngày Sinh'," +
                     " cha as 'Cha', me as 'Mẹ', dia_chi as 'Địa Chỉ', dt1 as 'ĐT'," +
                     " khu as 'Khu', ace as 'ACE', ghi_chu as 'Ghi Chú' FROM leohien4_glvnt.ThieuNhi";
                 MySqlCommand cmd = new MySqlCommand(sql, cnn);

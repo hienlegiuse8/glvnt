@@ -65,7 +65,8 @@ namespace glvnt.Controller
                     TENTHANH + " = '" + thieunhi.ten_thanh + "'" +
                     " ," + TEN + " = '" + thieunhi.ten + "'" +
                     " ," + HO + " = '" + thieunhi.ho + "'" +
-                    " ," + NGAYSINH + " = '" + convertMDYYYYtoYYYYMD(thieunhi.ngay_sinh) + "'" +
+                    //" ," + NGAYSINH + " = '" + convertDDMMYYYYtoYYYYMD(thieunhi.ngay_sinh) + "'" +
+                    " ," + NGAYSINH + " = '" + thieunhi.ngay_sinh + "'" +
                     " ," + CHA + " = '" + thieunhi.cha + "'" +
                     " ," + ME + " = '" + thieunhi.me + "'" +
                     " ," + DIACHI + " = '" + thieunhi.dia_chi + "'" +

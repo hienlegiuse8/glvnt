@@ -431,9 +431,17 @@ namespace glvnt.View
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            if (dr == null)
+            try
             {
-                Utils.showError("Chọn một thiếu nhi để cập nhập điểm số!");
+                if (dr == null)
+                {
+                    throw new Exception("Chọn một thiếu nhi để cập nhập!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Utils.showError(ex.Message);
+                return;
             }
 
             string idthieunhi = dr[IDTHIEUNHI].ToString();
