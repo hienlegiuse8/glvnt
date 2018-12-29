@@ -59,7 +59,7 @@
         <StackPanel Grid.Row="0" Grid.Column="2" >
             <Button x:Name="btn_add" Content="Add" Margin="10,10,10,0" Click="btn_add_Click"/>
             <Button x:Name="btn_update" Content="Update" Margin="10,10,10,0" Click="btn_update_Click"/>
-            <Button x:Name="btn_delete" Content="Delete" Margin="10,10,10,0" Click="btn_delete_Click" IsEnabled="True"/>
+            <Button x:Name="btn_delete" Content="Delete" Margin="10,10,10,0" Click="btn_delete_Click" IsEnabled="False"/>
         </StackPanel>
 
 
