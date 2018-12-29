@@ -3,6 +3,8 @@ using System.Windows;
 using System.Windows.Controls;
 using glvnt.Model;
 using glvnt.Controller;
+using System.Reflection;
+using System.IO;
 /*
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +41,9 @@ namespace glvnt.View
 
             mainmenuController = new MainMenuController();
             LoadCurrentClass();
+
+            string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            this.Title += " - " + version;
         }
 
         private void convertCurrentMonthToHocKy()
@@ -58,15 +63,7 @@ namespace glvnt.View
 
         private void CurrentClass_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                //ListViewCurrentClass.DataContext = mainmenuController.ClassLoad().Tables[0].DefaultView;
-                //ListViewCurrentClass.Visibility = Visibility.Visible;
-            }
-            catch (Exception ex)
-            {
-                Utils.showError(ex.Message);
-            }
+
         }
 
         private void LoadCurrentClass()
@@ -95,7 +92,6 @@ namespace glvnt.View
         {
             Button btn = args.Source as Button;
 
-            //MessageBox.Show("Button " + btn.Name + " " + btn.Content);
             QuanTriLop qtl = new QuanTriLop(btn.Name, hocky1);
             App.Current.MainWindow = qtl;
             qtl.ShowDialog();

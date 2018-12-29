@@ -6,19 +6,46 @@
         xmlns:local="clr-namespace:glvnt.View"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
-        Title="QuanTriLop" Height="600" Width="800">
+        Title="QuanTriLop" Height="600" Width="800" Activated="Window_Activated">
     <Grid x:Name="QuanTriLopGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="8*"/>
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="200" />
         </Grid.ColumnDefinitions>
-        <DataGrid Grid.Row="0" Grid.Column="0" x:Name="QuanLyLopDataGrid" Margin="10" ItemsSource="{Binding}" AutoGenerateColumns="True" 
+        <DataGrid Grid.Row="0" Grid.Column="0" x:Name="QuanLyLopDataGrid" Margin="10" ItemsSource="{Binding}" AutoGenerateColumns="False" 
                     ScrollViewer.CanContentScroll="False" 
                     ScrollViewer.HorizontalScrollBarVisibility="Auto"
                           ColumnWidth="Auto" SelectionChanged="danhsach_selectChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding id_thieunhi}"/>
+                <DataGridTextColumn Header="Tên" Binding="{Binding ten}"/>
+                <DataGridTextColumn Header="Họ" Binding="{Binding ho}"/>
+                <DataGridTextColumn Header="Ngày Sinh" Binding="{Binding ngay_sinh}"/>
+                <DataGridTextColumn Header="Miệng" Binding="{Binding hkmieng}"/>
+                <DataGridTextColumn Header="15 Phút" Binding="{Binding hk15phut}"/>
+                <DataGridTextColumn Header="1 Tiết" Binding="{Binding hk1tiet}"/>
+                <DataGridTextColumn Header="KTHK" Binding="{Binding hkhocky}"/>
+                <DataGridTextColumn Header="Vắng" Binding="{Binding hkvang}"/>
+                <DataGridTextColumn Header="Trễ" Binding="{Binding hktre}"/>
+                <DataGridTextColumn Header="Có Mặt" Binding="{Binding hkcomat}"/>
+                <DataGridTextColumn Header="Học Lực" Binding="{Binding xeploaihocluc}"/>
+                <DataGridTextColumn Header="Chuyên Cần" Binding="{Binding xeploaichuyencan}"/>
+                <DataGridTextColumn Header="Đạo Đức" Binding="{Binding xeploaidaoduc}"/>
+                <DataGridTextColumn Header="Xếp Loại" Binding="{Binding xeploaihk}"/>
+                <DataGridTextColumn Header="ĐTB HK1" Binding="{Binding hk1diemtb}"/>
+                <DataGridTextColumn Header="Xếp Hạng HK1" Binding="{Binding hkthuhang}"/>
+                
+                <DataGridTextColumn Header="Cả Năm HL" Binding="{Binding cnxeploaihocluc}"/>
+                <DataGridTextColumn Header="Cả Năm CC" Binding="{Binding cnxeploaichuyencan}"/>
+                <DataGridTextColumn Header="Cả Năm ĐĐ" Binding="{Binding cnxeploaidaoduc}"/>
+                <DataGridTextColumn Header="Cả Năm XL" Binding="{Binding xeploaicn}"/>
+                <DataGridTextColumn Header="ĐTB HK2" Binding="{Binding hk2diemtb}"/>
+                <DataGridTextColumn Header="ĐTB CN" Binding="{Binding cndiemtb}"/>
+                <DataGridTextColumn Header="Xếp Hạng CN" Binding="{Binding cnthuhang}"/>
+            </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="0" Grid.Column="1" >
             <Grid>
@@ -45,50 +72,64 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" x:Name="lbl_hocky" Content="Học Kỳ:" Margin="0,20,0,0"/>
+                <Label Grid.Row="0" Grid.Column="0" x:Name="lbl_hocky" Content="Học Kỳ:" Margin="0,20,0,0" Background="#FF0B3681" FontWeight="Bold" Foreground="White" />
                 <TextBox Grid.Row="0" Grid.Column="1" x:Name="txt_hocky" Margin="0,20,10,0" IsReadOnly="True"/>
                 <Label Grid.Row="1" Grid.Column="0" x:Name="lbl_ktmieng" Content="Kiểm Tra Miệng:"/>
-                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txt_ktmieng" Margin="0,0,10,0"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txt_ktmieng" Margin="0,0,10,0" PreviewTextInput="GradeValidation"/>
                 <Label Grid.Row="2" Grid.Column="0" x:Name="lbl_kt15phut" Content="Kiểm Tra 15 phút:"/>
-                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txt_kt15phut" Margin="0,0,10,0"/>
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txt_kt15phut" Margin="0,0,10,0" PreviewTextInput="GradeValidation"/>
                 <Label Grid.Row="3" Grid.Column="0" x:Name="lbl_kt1tiet" Content="Kiểm Tra 1 tiết:"/>
-                <TextBox Grid.Row="3" Grid.Column="1" x:Name="txt_kt1tiet" Margin="0,0,10,0"/>
+                <TextBox Grid.Row="3" Grid.Column="1" x:Name="txt_kt1tiet" Margin="0,0,10,0" PreviewTextInput="GradeValidation"/>
                 <Label Grid.Row="4" Grid.Column="0" x:Name="lbl_kthocky" Content="Kiểm Tra Học Kỳ:"/>
-                <TextBox Grid.Row="4" Grid.Column="1" x:Name="txt_kthocky" Margin="0,0,10,0"/>
+                <TextBox Grid.Row="4" Grid.Column="1" x:Name="txt_kthocky" Margin="0,0,10,0" PreviewTextInput="GradeValidation"/>
                 <Label Grid.Row="5" Grid.Column="0" x:Name="lbl_vang" Content="Vắng:"/>
-                <TextBox Grid.Row="5" Grid.Column="1" x:Name="txt_vang" Margin="0,0,10,0"/>
+                <TextBox Grid.Row="5" Grid.Column="1" x:Name="txt_vang" Margin="0,0,10,0" PreviewTextInput="DiemDanhValidation"/>
                 <Label Grid.Row="6" Grid.Column="0" x:Name="lbl_tre" Content="Trễ:"/>
-                <TextBox Grid.Row="6" Grid.Column="1" x:Name="txt_tre" Margin="0,0,10,0"/>
+                <TextBox Grid.Row="6" Grid.Column="1" x:Name="txt_tre" Margin="0,0,10,0" PreviewTextInput="DiemDanhValidation"/>
                 <Label Grid.Row="7" Grid.Column="0" x:Name="lbl_comat" Content="Có Mặt:"/>
-                <TextBox Grid.Row="7" Grid.Column="1" x:Name="txt_comat" Margin="0,0,10,0"/>
+                <TextBox Grid.Row="7" Grid.Column="1" x:Name="txt_comat" Margin="0,0,10,0" PreviewTextInput="DiemDanhValidation"/>
                 <Label Grid.Row="8" Grid.Column="0" x:Name="lbl_hocluc" Content="Học Lực:"/>
-                <TextBox Grid.Row="8" Grid.Column="1" x:Name="txt_hocluc" Margin="0,0,10,0"/>
+                <ComboBox x:Name="cb_hocluc" Grid.Row="8" Grid.Column="1" Margin="0,0,10,0"/>
                 <Label Grid.Row="9" Grid.Column="0" x:Name="lbl_chuyencan" Content="Chuyên Cần:"/>
-                <TextBox Grid.Row="9" Grid.Column="1" x:Name="txt_chuyencan" Margin="0,0,10,0"/>
+                <ComboBox x:Name="cb_chuyencan" Grid.Row="9" Grid.Column="1" Margin="0,0,10,0"/>
                 <Label Grid.Row="10" Grid.Column="0" x:Name="lbl_daoduc" Content="Đạo Đức:"/>
-                <TextBox Grid.Row="10" Grid.Column="1" x:Name="txt_daoduc" Margin="0,0,10,0"/>
+                <ComboBox x:Name="cb_daoduc" Grid.Row="10" Grid.Column="1" Margin="0,0,10,0"/>
                 <Label Grid.Row="11" Grid.Column="0" x:Name="lbl_xeploai" Content="Xếp Loại:"/>
-                <TextBox Grid.Row="11" Grid.Column="1" x:Name="txt_xeploai" Margin="0,0,10,0"/>
-                <Button Grid.Row="12" Grid.Column="0" x:Name="UpdateHocKy" Content="Update HK" Margin="5" MaxWidth="100" Click="UpdateHK" />
+                <ComboBox x:Name="cb_xeploai" Grid.Row="11" Grid.Column="1" Margin="0,0,10,0"/>
+                <!--<Button Grid.Row="12" Grid.Column="0" x:Name="UpdateHocKy" Content="Update HK" Margin="5" MaxWidth="100" Click="UpdateHK" />-->
 
+                <Label x:Name="canam" Grid.Row="12" Content="Cả Năm" Grid.ColumnSpan="2" Background="#FF0B3681" FontWeight="Bold" Foreground="White" Margin="0,0,10,0"/>
+                
                 <Label Grid.Row="13" Grid.Column="0" x:Name="lbl_cnhocluc" Content="Học Lực:"/>
-                <TextBox Grid.Row="13" Grid.Column="1" x:Name="txt_cnhocluc" Margin="0,0,10,0"/>
+                <ComboBox x:Name="cb_cnhocluc" Grid.Row="13" Grid.Column="1" Margin="0,0,10,0"/>
                 <Label Grid.Row="14" Grid.Column="0" x:Name="lbl_cnchuyencan" Content="Chuyên Cần:"/>
-                <TextBox Grid.Row="14" Grid.Column="1" x:Name="txt_cnchuyencan" Margin="0,0,10,0"/>
+                <ComboBox x:Name="cb_cnchuyencan" Grid.Row="14" Grid.Column="1" Margin="0,0,10,0"/>
                 <Label Grid.Row="15" Grid.Column="0" x:Name="lbl_cndaoduc" Content="Đạo Đức:"/>
-                <TextBox Grid.Row="15" Grid.Column="1" x:Name="txt_cndaoduc" Margin="0,0,10,0"/>
+                <ComboBox x:Name="cb_cndaoduc" Grid.Row="15" Grid.Column="1" Margin="0,0,10,0"/>
                 <Label Grid.Row="16" Grid.Column="0" x:Name="lbl_cnxeploai" Content="Xếp Loại:"/>
-                <TextBox Grid.Row="16" Grid.Column="1" x:Name="txt_cnxeploai" Margin="0,0,10,0"/>
-                <Button Grid.Row="17" Grid.Column="0" x:Name="UpdateCaNam" Content="Update Năm" Margin="5" MaxWidth="100"/>
+                <ComboBox x:Name="cb_cnxeploai" Grid.Row="16" Grid.Column="1" Margin="0,0,10,0"/>
+                
+                <Button Grid.Row="17" Grid.ColumnSpan="2" x:Name="UpdateDiem" Content="Update Điểm" Margin="0,5,10,5" Click="UpdateDiem_Click" />
+
+                <Button Grid.Row="18" Grid.ColumnSpan="2" x:Name="UpdateTBXH" Content="Run Xếp Loại và Hạng" Margin="0,5,10,5" Click="UpdateXLXH_Click"/>
+
+                <Button Grid.Row="19" Grid.ColumnSpan="2" x:Name="refreshdata" Content="ReLoad Bảng điểm" Margin="0,5,10,5" Click="refreshdata_Click"/>
+
+                <Button Grid.Row="20" Grid.ColumnSpan="2" x:Name="ExportExcel" Content="Open in Excel" Margin="0,5,10,5" Click="ExportExcel_Click" />
+
+                <Button Grid.Row="21" Grid.ColumnSpan="2" x:Name="Add" Content="Add Thiếu Nhi"  Margin="0,5,10,5" Click="Add_Click" IsEnabled="False"/>
+                <Button Grid.Row="22" Grid.ColumnSpan="2" x:Name="Edit" Content="Edit Thiếu Nhi Info"  Margin="0,5,10,5" Click="Edit_Click"/>
+                <Button Grid.Row="23" Grid.ColumnSpan="2" x:Name="Delete" Content="Delete"  Margin="0,5,10,5" IsEnabled="False"/>
             </Grid>
-            
-            
-            
+            <TextBox x:Name="txt_IDThieuNhiLopNamHoc" Visibility="Hidden"/>
         </StackPanel>
     </Grid>
 </Window>

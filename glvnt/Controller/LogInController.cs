@@ -14,10 +14,9 @@ namespace glvnt.Controller
     {
         public bool CheckLogIn(Glv glv, string user, string password)
         {
-            MySqlConnection cnn;
             //string connetionString = ConfigurationManager.ConnectionStrings["tnntsiteground"].ConnectionString;
             string connectionString = CONNSTRING.connstring;
-            cnn = new MySqlConnection(connectionString);
+            MySqlConnection cnn = new MySqlConnection(connectionString);
             try
             {
                 cnn.Open();

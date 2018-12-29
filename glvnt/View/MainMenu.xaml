@@ -18,12 +18,30 @@
             <MenuItem x:Name="yourname" Header="Hi,">
             </MenuItem>
         </Menu>
+        <StackPanel DockPanel.Dock="Bottom">
+            <StatusBar Height="20" >
+                <StatusBar.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                    </ItemsPanelTemplate>
+                </StatusBar.ItemsPanel>
+                <StatusBarItem Grid.Column="1">
+                    <ProgressBar x:Name="progress" Height="20" MinWidth="200" MaxWidth="400" IsIndeterminate="False"/>
+                </StatusBarItem>
+            </StatusBar>
+        </StackPanel>
         <StackPanel DockPanel.Dock="Left" x:Name="ChonLuaHocKy" Margin="10">
             <RadioButton GroupName="HocKy" x:Name="HK1" Content="Học Kỳ I" IsChecked="True" Checked="RadioButton_Checked"/>
             <RadioButton GroupName="HocKy" x:Name="HK2" Content="Học Kỳ II" Checked="RadioButton_Checked"/>
         </StackPanel>
         <StackPanel x:Name="CurrentClasses" Margin="10" HorizontalAlignment="Left">
-            
+
         </StackPanel>
     </DockPanel>
 </Window>

@@ -1,4 +1,5 @@
-﻿/*using System;
+﻿using System;
+/*
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,22 +21,26 @@ namespace glvnt.Controller
         //public System.Data.DataSet ClassLoad()
         public System.Data.DataTable ClassLoad()
         {
-            MySqlConnection cnn;
             //string connetionString = ConfigurationManager.ConnectionStrings["tnntsiteground"].ConnectionString;
             string connectionString = CONNSTRING.connstring;
-            cnn = new MySqlConnection(connectionString);
-
-            cnn.Open();
-            string sql = "SELECT id_lopnamhoc, ten_lop,ten_namhoc,phong FROM leohien4_glvnt.LopNamHocView where isCurrent=1;";
-            MySqlCommand cmd = new MySqlCommand(sql, cnn);
-            MySqlDataAdapter msda = new MySqlDataAdapter(cmd);
-            //System.Data.DataSet ds = new System.Data.DataSet();
+            MySqlConnection cnn = new MySqlConnection(connectionString);
             System.Data.DataTable dt = new System.Data.DataTable();
-
-            //msda.Fill(ds);
-            //return ds;
-            msda.Fill(dt);
-            cnn.Close();
+            try
+            {
+                cnn.Open();
+                string sql = "SELECT id_lopnamhoc, ten_lop,ten_namhoc,phong FROM leohien4_glvnt.LopNamHocView where isCurrent=1;";
+                MySqlCommand cmd = new MySqlCommand(sql, cnn);
+                MySqlDataAdapter msda = new MySqlDataAdapter(cmd);
+                //System.Data.DataSet ds = new System.Data.DataSet();
+                //msda.Fill(ds);
+                //return ds;
+                msda.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                Utils.showError(ex.Message);
+            }
+            finally { cnn.Close(); }
             return dt;            
         }
 

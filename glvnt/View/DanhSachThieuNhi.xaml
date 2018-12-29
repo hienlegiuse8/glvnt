@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:glvnt.View"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="DanhSachThieuNhi" Height="480" Width="800">
+        Title="DanhSachThieuNhi" Height="480" Width="800" Activated="window_Activated">
     <Grid>
         <Grid x:Name="DSParentGrid" Margin="20" Visibility="Hidden">
             <Grid.RowDefinitions>
@@ -19,15 +19,15 @@
             <DataGrid Grid.Row="0" Grid.Column="0" x:Name="DanhSachGrid" Margin="10" ItemsSource="{Binding}" AutoGenerateColumns="True" 
                     ScrollViewer.CanContentScroll="False" 
                     ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                          ColumnWidth="Auto">
+                          ColumnWidth="Auto" SelectionChanged="ThieuNhi_SelectionChanged">
             </DataGrid>
             <StackPanel Grid.Row="0" Grid.Column="1" >
-                <Label x:Name="actionmenu" Content="Action Menu" HorizontalAlignment="Right" VerticalAlignment="Top" MinWidth="60"/>
-                <Button x:Name="Add" Content="Add" Margin="10"/>
-                <Button x:Name="Edit" Content="Edit" Margin="10"/>
-                <Button x:Name="Delete" Content="Delete" Margin="10"/>
+                <Label x:Name="actionmenu" Content="Menu" HorizontalAlignment="Center" VerticalAlignment="Top" MinWidth="60"/>
+                <Button x:Name="Add" Content="Add" Margin="10" Click="Add_Click" IsEnabled="False"/>
+                <Button x:Name="Edit" Content="Edit" Margin="10" Click="Edit_Click"/>
+                <Button x:Name="Delete" Content="Delete" Margin="10" IsEnabled="False"/>
                 <Button x:Name="Refresh" Content="Refresh" Margin="10" Click="Refresh_Click"/>
-                <Button x:Name="Close" Content="Close" Margin="10" Click="Close_Click"/>
+                <Button x:Name="Close" Content="Close" Margin="10" Click="Close_Click" IsEnabled="False"/>
             </StackPanel>
         </Grid>
     </Grid>

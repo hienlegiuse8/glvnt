@@ -1,0 +1,53 @@
+﻿<Window x:Class="glvnt.View.CapNhapThieuNhi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:glvnt.View"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="Cập Nhập Thiếu Nhi" Height="480" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" >
+            <TextBlock x:Name="tb_ten_thanh" Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Tên Thánh:" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tb_ho" Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Họ:" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tb_ten" Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Tên:" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tb_ngay_sinh" Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Ngày Sinh:" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tb_cha" Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Cha:" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tb_me" Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Mẹ" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tb_dia_chi" Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Địa Chỉ:" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tb_dt1" Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Điện Thoại:" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tb_khu" Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Khu:" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tb_ghi_chu" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="Ghi Chú:" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1" >
+            <TextBox x:Name="txt_ten_thanh" Height="23" Margin="10,10,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txt_ho" Height="23" Margin="10,10,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txt_ten" Height="23" Margin="10,10,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+            <DatePicker x:Name="date_ngay_sinh" Height="23" Margin="10,10,10,0" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txt_cha" Height="23" Margin="10,10,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txt_me" Height="23" Margin="10,10,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txt_dia_chi" Height="23" Margin="10,10,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txt_dt1" Height="23" Margin="10,10,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txt_khu" Height="23" Margin="10,10,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txt_ghi_chu" Height="23" Margin="10,10,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txt_id_thieunhi" Height="23" Margin="10,10,10,0" TextWrapping="Wrap" Visibility="Hidden" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="2" >
+            <Button x:Name="btn_add" Content="Add" Margin="10,10,10,0" Click="btn_add_Click"/>
+            <Button x:Name="btn_update" Content="Update" Margin="10,10,10,0" Click="btn_update_Click"/>
+            <Button x:Name="btn_delete" Content="Delete" Margin="10,10,10,0" Click="btn_delete_Click" IsEnabled="True"/>
+        </StackPanel>
+
+
+    </Grid>
+</Window>
